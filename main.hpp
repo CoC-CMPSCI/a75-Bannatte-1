@@ -21,7 +21,7 @@ int finduserstring(char cstr[], int cstrlen, char userstr[], int userlen)
         
         for (int j = 0; j < userlen; j++) {
             if (cstr[i + j] != userstr[j]) {
-                match = false;
+                found = false;
                 break;
             }
         }
