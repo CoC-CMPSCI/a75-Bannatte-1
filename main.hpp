@@ -16,13 +16,19 @@ int finduserstring(char cstr[], int cstrlen, char userstr[], int userlen)
     }
 
     for (int i = 0; i <= cstrlen - userlen; i++) {
+
+        bool found = true;
+        
         for (int j = 0; j < userlen; j++) {
             if (cstr[i + j] != userstr[j]) {
-                return -1;
+                match = false;
+                break;
             }
         }
-        return i;
+        if (found) {
+            return i;
+        }
     }
+    return -1;
 }
-
 #endif
